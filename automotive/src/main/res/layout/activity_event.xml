@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VehicleLab - Event Trigger"
+        style="@style/VehicleLab.Text.Title"
+        android:layout_marginBottom="24dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Event Type Selection -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Event Type" style="@style/VehicleLab.Text.PropertyLabel" />
+            <Spinner android:id="@+id/spinner_event_type" android:layout_width="match_parent" android:layout_height="48dp" android:background="@color/surface" android:layout_marginBottom="16dp" />
+
+            <!-- Title Input -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Title" style="@style/VehicleLab.Text.PropertyLabel" />
+            <EditText android:id="@+id/edit_event_title" android:layout_width="match_parent" android:layout_height="48dp" android:background="@color/surface" android:textColor="@color/white" android:padding="12dp" android:layout_marginBottom="16dp" android:hint="Enter title..." android:autofillHints="none" android:inputType="text" />
+
+            <!-- Message Input -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Message" style="@style/VehicleLab.Text.PropertyLabel" />
+            <EditText android:id="@+id/edit_event_message" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="96dp" android:background="@color/surface" android:textColor="@color/white" android:padding="12dp" android:gravity="top" android:layout_marginBottom="24dp" android:hint="Enter message..." android:autofillHints="none" android:inputType="textMultiLine" />
+
+            <!-- Trigger Button -->
+            <Button android:id="@+id/btn_trigger_event" android:layout_width="200dp" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:text="TRIGGER" style="@style/VehicleLab.Button.Primary" android:layout_marginBottom="32dp" />
+
+            <!-- Result Divider -->
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RESULT"
+                android:textColor="@color/text_secondary"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Result Status -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:text="Status:" style="@style/VehicleLab.Text.PropertyLabel" />
+                <TextView android:id="@+id/txt_event_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-" style="@style/VehicleLab.Text.PropertyValue" />
+            </LinearLayout>
+
+            <!-- Result Response -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView android:layout_width="100dp" android:layout_height="wrap_content" android:text="Response:" style="@style/VehicleLab.Text.PropertyLabel" />
+                <TextView android:id="@+id/txt_event_response" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-" style="@style/VehicleLab.Text.PropertyValue" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

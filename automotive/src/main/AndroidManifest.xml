@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature
+        android:name="android.hardware.type.automotive"
+        android:required="true" />
+
+    <!-- Quyền truy cập thông tin xe -->
+    <uses-permission android:name="android.car.permission.CAR_INFO" />
+    <!-- Quyền điều khiển hệ thống điều hòa -->
+    <uses-permission android:name="android.car.permission.CONTROL_CAR_CLIMATE" />
+    <!-- Quyền đọc tốc độ xe -->
+    <uses-permission android:name="android.car.permission.CAR_SPEED" />
+    <!-- Quyền đọc trạng thái năng lượng/nhiên liệu -->
+    <uses-permission android:name="android.car.permission.CAR_ENERGY" />
+
+    <application
+        android:allowBackup="true"
+        android:appCategory="audio"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.My_first_AAOS_v1">
+
+        <!-- Màn hình Điều khiển xe (Màn hình chính) -->
+        <activity
+            android:name=".ui.vehicle.VehicleActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Màn hình Kích hoạt sự kiện VAPI -->
+        <activity
+            android:name=".ui.event.EventActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
